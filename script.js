@@ -41,29 +41,26 @@ async function changeJewelry(type, src) {
 }
 
 function toggleCategory(category) {
-  // Hide all other UI elements first
-  subcategoryButtons.style.display = 'flex';
+  // Hide the jewelry options if they are visible
   jewelryOptions.style.display = 'none';
+  // Show the subcategory buttons
+  subcategoryButtons.style.display = 'flex';
 
   const subButtons = subcategoryButtons.querySelectorAll('button');
   subButtons.forEach(btn => {
     btn.style.display = btn.innerText.toLowerCase().includes(category) ? 'inline-block' : 'none';
   });
-  // Clear jewelry when a new category is selected
   earringImg = null;
   necklaceImg = null;
 }
 
 function selectJewelryType(type) {
   currentType = type;
-  
-  // Hide the subcategory buttons
+
+  // Hide the subcategory buttons and show the jewelry products
   subcategoryButtons.style.display = 'none';
-  
-  // Display the jewelry options
   jewelryOptions.style.display = 'flex';
 
-  // 🔁 Clear previously loaded images when switching category
   earringImg = null;
   necklaceImg = null;
 

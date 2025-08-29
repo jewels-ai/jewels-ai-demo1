@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Overlay Jewels Try-On</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video id="webcam" autoplay muted playsinline></video>
+  <canvas id="overlay"></canvas>
+
+  <!-- Branding -->
+  <div id="branding">
+    <img src="logo.png" alt="Jewels Logo" class="camera-icon" />
+  </div>
+
+  <!-- Snapshot Modal -->
+  <div id="snapshot-modal">
+    <h3>Snapshot Preview</h3>
+    <img id="snapshot-preview" src="" alt="Snapshot" />
+    <div class="snapshot-buttons">
+      <button onclick="saveSnapshot()">Save</button>
+      <button onclick="shareSnapshot()">Share</button>
+      <button onclick="closeSnapshotModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Jewelry Category Buttons -->
+  <div id="jewelry-mode">
+    <button data-category="gold">Gold</button>
+    <button data-category="diamond">Diamond</button>
+  </div>
+
+  <!-- Subcategory Buttons -->
+  <div id="subcategory-buttons" style="display: none;">
+    <button data-type="gold_earrings">Gold Earrings</button>
+    <button data-type="gold_necklaces">Gold Necklaces</button>
+    <button data-type="diamond_earrings">Diamond Earrings</button>
+    <button data-type="diamond_necklaces">Diamond Necklaces</button>
+  </div>
+
+  <!-- Jewelry Options -->
+  <div id="jewelry-options" class="options-group" style="display: none;"></div>
+
+  <!-- Snapshot Button -->
+  <button id="snapshot-btn">
+    <img src="camera-icon.png" alt="Snapshot" />
+  </button>
+
+  <!-- Reset Button -->
+  <button id="reset-btn">🔄</button>
+
+  <!-- Info Button -->
+  <button id="info-btn">ℹ️</button>
+
+  <!-- Location Button -->
+  <a id="location-btn" href="https://www.google.com/maps/place/50,+VP+St,+Vannarpet,+Coonoor,+Tamil+Nadu+643101" target="_blank" rel="noopener noreferrer">
+    <img src="locoation_icon.png" alt="Location Icon" style="width: 40px; height: 40px;" />
+  </a>
+
+  <!-- Info Modal -->
+  <div id="info-modal">
+    <h3>How to Use the Try-On App</h3>
+    <div class="info-content">
+      <ul>
+        <li>Allow camera access when prompted.</li>
+        <li>Choose a jewelry item (earrings, necklace, etc.).</li>
+        <li>Use one finger to drag jewelry, two fingers to pinch/resize.</li>
+        <li>Capture a snapshot when ready.</li>
+      </ul>
+      <button class="close-btn" onclick="toggleInfoModal()">Got it!</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

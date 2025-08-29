@@ -86,7 +86,7 @@ video, canvas {
 /* Subcategory Buttons (Gold Earrings, Gold Necklaces, etc.) */
 #subcategory-buttons {
   position: fixed;
-  bottom: 70px; /* Adjusted to move it down just above the main buttons */
+  bottom: 130px; /* Adjusted to move it up */
   left: 0;
   width: 100%;
   justify-content: center;
@@ -113,7 +113,7 @@ video, canvas {
 /* Jewelry Options Scroll List (Product Line) */
 .options-group {
   position: fixed;
-  bottom: 130px; /* Adjusted to move it up and make space for subcategory buttons */
+  bottom: 70px; /* Adjusted to move it down */
   left: 0;
   width: 100%;
   transform: none;
@@ -251,7 +251,7 @@ video, canvas {
 /* Location Button */
 #location-btn {
   position: fixed;
-  bottom: 10px;
+  bottom: 10px; 
   left: 20px;
   background-color: #5E0F8B;
   color: #ffffff;

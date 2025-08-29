@@ -52,13 +52,14 @@ video, canvas {
   margin-right: 8px;
 }
 
-/* Jewelry Mode Buttons */
+/* Main Jewelry Category Buttons (Gold / Diamond) */
 #jewelry-mode {
   position: fixed;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-direction: row;
   gap: 12px;
   z-index: 5;
   background: rgba(0, 0, 0, 0.6);
@@ -75,9 +76,14 @@ video, canvas {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Subcategory Buttons */
+#jewelry-mode button:hover {
+  background-color: #3b0764;
+}
+
+/* Subcategory Buttons (Gold Earrings, Gold Necklaces, etc.) */
 #subcategory-buttons {
   position: fixed;
   bottom: 70px;
@@ -102,7 +108,7 @@ video, canvas {
   font-weight: bold;
 }
 
-/* Jewelry Options */
+/* Jewelry Options Scroll List */
 .options-group {
   position: fixed;
   bottom: 130px;
@@ -112,10 +118,35 @@ video, canvas {
   gap: 15px;
   z-index: 2;
   background: #5E0F8B;
+  backdrop-filter: blur(10px);
   padding: 10px 20px;
   border-radius: 16px;
   max-width: 90%;
   overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.options-group::-webkit-scrollbar {
+  display: none;
+}
+
+.options-group button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.options-group button img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.options-group button:hover img {
+  border: 2px solid #fff;
+  transform: scale(1.05);
 }
 
 /* Snapshot Button */
@@ -125,6 +156,8 @@ video, canvas {
   right: 20px;
   background-color: transparent;
   border: none;
+  padding: 0;
+  border-radius: 50%;
   cursor: pointer;
   z-index: 10;
 }
@@ -132,22 +165,9 @@ video, canvas {
 #snapshot-btn img {
   width: 50px;
   height: 50px;
+  object-fit: contain;
   border-radius: 50%;
-}
-
-/* Reset Button */
-#reset-btn {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  background: #FFB800;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  padding: 10px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 10;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 /* Info Button */
@@ -164,4 +184,95 @@ video, canvas {
   z-index: 10;
 }
 
-/* Modals remain same (info, snapshot, location) */
+/* Info Modal */
+#info-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  z-index: 9999;
+  max-width: 90%;
+  width: 400px;
+}
+
+.info-content ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.close-btn {
+  background-color: #5E0F8B;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Snapshot Modal */
+#snapshot-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  z-index: 9999;
+}
+
+#snapshot-preview {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.snapshot-buttons button {
+  margin: 5px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #5E0F8B;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Location Button */
+#location-btn {
+  position: fixed;
+  bottom: 10px; 
+  left: 20px;
+  background-color: #5E0F8B;
+  color: #ffffff;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Optional: location modal if used */
+#location-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 9999;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+}

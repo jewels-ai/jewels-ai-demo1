@@ -28,7 +28,7 @@ body, html {
   background-color: var(--bg-dark);
   font-family: 'Poppins', sans-serif;
   color: var(--text-color-light);
-  overflow-x: hidden; /* Prevent horizontal body scrollbar if not needed */
+  overflow-x: hidden;
 }
 
 .video-container,
@@ -94,8 +94,10 @@ body, html {
 #dynamic-options-container {
   position: fixed;
   bottom: 70px; /* Position it above the main category buttons */
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%; /* Make it take the full width of the screen */
+  padding: 0 10px; /* Add a little padding on the sides */
+  left: 0;
+  transform: none; /* Remove centering transform */
   z-index: 5;
 }
 
@@ -125,11 +127,11 @@ body, html {
   gap: var(--spacing-lg);
   background: var(--primary-color);
   backdrop-filter: var(--blur-filter);
-  padding: 10px 20px;
+  padding: 10px; /* Reduced padding for mobile */
   border-radius: var(--border-radius-xl);
-  max-width: 90%;
   overflow-x: auto;
   scrollbar-width: none;
+  width: 100%; /* Important for horizontal scroll to work */
 }
 
 .options-group::-webkit-scrollbar { display: none; }

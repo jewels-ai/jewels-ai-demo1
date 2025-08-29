@@ -41,7 +41,7 @@ async function changeJewelry(type, src) {
 }
 
 function toggleCategory(category) {
-  // Hide the jewelry options if they are visible
+  // Hide the jewelry options
   jewelryOptions.style.display = 'none';
   // Show the subcategory buttons
   subcategoryButtons.style.display = 'flex';
@@ -56,9 +56,11 @@ function toggleCategory(category) {
 
 function selectJewelryType(type) {
   currentType = type;
-
-  // Hide the subcategory buttons and show the jewelry products
+  
+  // Hide the subcategory buttons
   subcategoryButtons.style.display = 'none';
+  
+  // Display the jewelry options
   jewelryOptions.style.display = 'flex';
 
   earringImg = null;

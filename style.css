@@ -58,15 +58,7 @@ body, html {
   height: auto;
 }
 
-/* Main UI Container for category buttons */
-.main-ui-container {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-}
-
+/* UI Controls (Buttons) */
 .button-group {
   display: flex;
   flex-direction: row;
@@ -75,6 +67,14 @@ body, html {
   padding: var(--spacing-md) var(--spacing-lg);
   border-radius: var(--border-radius-lg);
   backdrop-filter: var(--blur-filter);
+}
+
+#jewelry-mode {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
 }
 
 #jewelry-mode button {
@@ -99,7 +99,7 @@ body, html {
   z-index: 5;
 }
 
-#dynamic-options-container button {
+#subcategory-buttons button {
   background-color: var(--secondary-color);
   color: var(--text-color-dark);
   border: none;

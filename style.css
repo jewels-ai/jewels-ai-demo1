@@ -83,26 +83,21 @@ video, canvas {
   background-color: #3b0764;
 }
 
-/* New container for both subcategory and product lines */
-#combined-menu {
+/* Subcategory Buttons (Gold Earrings, Gold Necklaces, etc.) */
+#subcategory-buttons {
   position: fixed;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex; /* Use flexbox for horizontal alignment */
-  align-items: center; /* Vertically center items */
-  gap: 12px;
+  bottom: 70px; /* Adjusted to move it down just above the main buttons */
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  transform: none;
   z-index: 5;
+  display: flex;
+  gap: 12px;
   background: rgba(0, 0, 0, 0.6);
   padding: 8px 12px;
   border-radius: 10px;
   backdrop-filter: blur(8px);
-}
-
-/* Subcategory Buttons (Gold Earrings, Gold Necklaces, etc.) */
-/* Removed specific positioning, as it's now controlled by the new container */
-#subcategory-buttons {
-  /* No changes needed here, as it's a child of the new container */
 }
 
 #subcategory-buttons button {
@@ -116,9 +111,12 @@ video, canvas {
 }
 
 /* Jewelry Options Scroll List (Product Line) */
-/* Removed specific positioning, as it's now controlled by the new container */
 .options-group {
-  /* No changes needed here, as it's a child of the new container */
+  position: fixed;
+  bottom: 130px; /* Adjusted to move it up and make space for subcategory buttons */
+  left: 0;
+  width: 100%;
+  transform: none;
   display: flex;
   gap: 15px;
   z-index: 2;
@@ -128,7 +126,6 @@ video, canvas {
   border-radius: 16px;
   overflow-x: auto;
   scrollbar-width: none;
-  width: auto; /* Allow it to shrink to fit content */
 }
 
 .options-group::-webkit-scrollbar {
